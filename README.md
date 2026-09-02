@@ -1,6 +1,9 @@
 # RaceDay-API
 Programming 2B POE
-* Began by drafting the rough idea of the ERD.
-* Proceeded to create the final ERD using Draw.io.
-* Committed the milestone to Git.
-* 
+* Drafted the initial concept and requirements for the RaceDay system.
+* Designed the Entity Relationship Diagram (ERD).
+* Created the final ERD using Draw.io.
+* Added the ERD to the `/docs` directory.
+* Committed the ERD as a completed Part 1 milestone.
+
+
