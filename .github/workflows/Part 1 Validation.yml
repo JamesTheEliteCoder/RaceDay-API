@@ -19,14 +19,14 @@ jobs:
       - name: Validate required Part 1 files
         run: |
           test -d docs
-          test -f docs/Endpoint Table 1.png
-          test -f docs/Screenshot 2026-09-02 184046.png
-          test -f docs/RaceDayDB.sql
-          test -f docs/Endpoint Table 2.png
-          test -f docs/Endpoint Table 3.png
-          test -f docs/Endpoint Table 4.png
-          test -f docs/Endpoint Table 5.png
-          test -f docs/Endpoint Table 6.png
+          test -f "docs/Endpoint Table 1.png"
+          test -f "docs/Endpoint Table 2.png"
+          test -f "docs/Endpoint Table 3.png"
+          test -f "docs/Endpoint Table 4.png"
+          test -f "docs/Endpoint Table 5.png"
+          test -f "docs/Endpoint Table 6.png"
+          test -f "docs/RaceDayDB.sql"
+          test -f "docs/Screenshot 2026-09-02 184046.png"
 
       - name: Validation successful
         run: echo "Part 1 repository structure is valid."
