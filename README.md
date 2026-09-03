@@ -19,3 +19,31 @@ Programming 2B POE
 * Added primary keys, foreign keys, unique constraints, default values, and validation checks to enforce the required database rules.
 * Verified that all tables were successfully created and matched the planned database structure.
 * Committed the completed database schema to Git.
+
+
+
+
+## System Description
+
+RaceDay is a full-stack event management system designed for road running,
+walking, and cycling events. The system allows organisers to manage events,
+categories, enrolments, and results, while participants can view events,
+enrol in categories, and view their results.
+
+## User Roles
+
+### Organiser
+Organisers can create, update, and delete their own events, manage event
+categories, view participant enrolments, and capture race results.
+
+### Participant
+Participants can view events and categories, enrol in events, view their
+own enrolments, and view their own results.
+
+## CI/CD Pipeline
+
+[CI/CD pipeline screenshot here]
+
+## YouTube Demonstration
+
+[YouTube video link here]
