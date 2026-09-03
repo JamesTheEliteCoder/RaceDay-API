@@ -20,7 +20,10 @@ Programming 2B POE
 * Verified that all tables were successfully created and matched the planned database structure.
 * Committed the completed database schema to Git.
 
-
+* Reviewed the API endpoint plan against the ERD and identified that routes required organiser management functionality.
+* Added endpoints for organisers to create and update routes belonging to their events.
+* Updated the API endpoint plan to include 18 endpoints covering authentication, user profiles, events, routes, categories, enrolments, and results.
+* Committed the updated API endpoint plan to Git.
 
 
 ## System Description
