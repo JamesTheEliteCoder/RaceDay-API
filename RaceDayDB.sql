@@ -43,6 +43,10 @@ CHECK (DistanceKm > 0)
 
 
 
+
+
+
+
 CREATE TABLE Routes (
 RouteId INT IDENTITY(1,1) PRIMARY KEY,
 EventId INT NOT NULL,
@@ -60,10 +64,14 @@ FOREIGN KEY (EventId)
 REFERENCES Events(EventId),
 
 CONSTRAINT CK_Routes_Distance
-CHECK (DistanceKm > 0),
+CHECK (DistanceKm > 0)
 
 
 );
+
+
+
+
 
 
 CREATE TABLE Categories (
@@ -98,6 +106,8 @@ CHECK (MinimumAge IS NULL OR MinimumAge >= 0),
 CONSTRAINT CK_Categories_MaximumAge
 CHECK (MaximumAge IS NULL OR MaximumAge >= 0)
 );
+
+
 
 
 
@@ -151,6 +161,203 @@ CHECK (FinishingPosition > 0)
 
 
 );
+
+
+
+--Insertion of data into the User Tables--
+
+INSERT INTO Users
+(FirstName, LastName, Email, PasswordHash, Role, PhoneNumber, DateOfBirth)
+VALUES
+('Thabo', 'Mokoena', 'thabo.mokoena@raceday.co.za','PART1_SEED_HASH_001', 'Organiser', '0825551001', '1985-04-12'),
+('Lerato', 'Naidoo', 'lerato.naidoo@raceday.co.za','PART1_SEED_HASH_002', 'Organiser', '0835551002', '1990-08-25'),
+('Sipho', 'Dlamini', 'sipho.dlamini@raceday.co.za','PART1_SEED_HASH_003', 'Participant', '0845551003', '2001-06-18'),
+('Ayesha', 'Pillay', 'ayesha.pillay@raceday.co.za','PART1_SEED_HASH_004', 'Participant', '0855551004', '1998-11-03');
+
+select * from Users;
+
+
+
+
+
+
+
+--Insertion of events --
+
+INSERT INTO Events
+(OrganiserId, Name, Description, EventDate, Venue, City, Province, DistanceKm, EventType)
+VALUES
+(1,
+'Johannesburg City Run',
+'A community road running event through central Johannesburg.',
+'2027-03-14',
+'Mary Fitzgerald Square',
+'Johannesburg',
+'Gauteng',
+10.00,
+'Run'),
+
+(1,
+'Soweto Community Walk',
+'A family-friendly walking event through Soweto.',
+'2027-04-18',
+'Walter Sisulu Square',
+'Soweto',
+'Gauteng',
+8.00,
+'Walk'),
+
+(2,
+'Pretoria Cycle Challenge',
+'A road cycling event covering major routes around Pretoria.',
+'2027-05-09',
+'Union Buildings',
+'Pretoria',
+'Gauteng',
+40.00,
+'Cycle');
+
+
+
+
+SELECT
+EventID,
+OrganiserID,
+Name,
+EventDate,
+City,
+Province,
+DistanceKm,
+EventType
+FROM Events
+ORDER BY EventID;
+
+
+
+
+
+
+-- Insertion of Routes --
+
+INSERT INTO Routes
+(EventId, RouteName, AreasCovered, DistanceKm, StartLocation, FinishLocation, Description, MapUrl)
+VALUES
+(1,
+'Johannesburg City 10K',
+'Braamfontein, Newtown, Johannesburg CBD',
+10.00,
+'Mary Fitzgerald Square',
+'Mary Fitzgerald Square',
+'10 km road running route through central Johannesburg.',
+'https://example.com/routes/johannesburg-city-10k'),
+
+(2,
+'Soweto Community 8K',
+'Orlando, Kliptown, Soweto',
+8.00,
+'Walter Sisulu Square',
+'Walter Sisulu Square',
+'8 km community walking route through Soweto.',
+'https://example.com/routes/soweto-community-8k'),
+
+(3,
+'Pretoria Cycle 40K',
+'Arcadia, Pretoria CBD, Waterkloof',
+40.00,
+'Union Buildings',
+'Union Buildings',
+'40 km road cycling route around Pretoria.',
+'https://example.com/routes/pretoria-cycle-40k');
+
+
+SELECT
+RouteId,
+EventId,
+RouteName,
+DistanceKm,
+StartLocation,
+FinishLocation
+FROM Routes
+ORDER BY RouteId;
+
+
+
+
+-- Insertion of Categories --
+
+INSERT INTO Categories
+(EventId, RouteId, Name, CategoryType, MinimumAge, MaximumAge)
+VALUES
+(1, 1, 'Senior 10K', 'Age', 18, 39),
+(1, 1, 'Veteran 10K', 'Age', 40, 59),
+(2, 2, 'Family Walk', 'Distance', NULL, NULL),
+(3, 3, 'Open 40K', 'Distance', NULL, NULL),
+(3, 3, 'Veteran Cycle', 'Age', 40, 59);
+
+
+
+SELECT
+CategoryId,
+EventId,
+RouteId,
+Name,
+CategoryType,
+MinimumAge,
+MaximumAge
+FROM Categories
+ORDER BY CategoryId;
+
+
+
+
+
+-- Insertion of Enrolments --
+
+INSERT INTO Enrolments
+(ParticipantId, EventId, CategoryId)
+VALUES
+(3, 1, 1),
+(4, 1, 2),
+(3, 2, 3),
+(4, 3, 4);
+
+
+
+SELECT
+EnrolmentId,
+ParticipantId,
+EventId,
+CategoryId,
+EnrolmentDate,
+Status
+FROM Enrolments
+ORDER BY EnrolmentId;
+
+
+
+--Insertion of enrolments--
+
+INSERT INTO Results
+(EnrolmentId, FinishingPosition, FinishTime)
+VALUES
+(3, 12, '00:52:34'),
+(4, 27, '01:04:18');
+
+
+
+SELECT
+    ResultId,
+    EnrolmentId,
+    FinishingPosition,
+    FinishTime
+FROM Results
+ORDER BY ResultId;
+
+
+
+
+
+
 
 
 
