@@ -25,6 +25,11 @@ Programming 2B POE
 * Updated the API endpoint plan to include 18 endpoints covering authentication, user profiles, events, routes, categories, enrolments, and results.
 * Committed the updated API endpoint plan to Git.
 
+* Finalised the SQL database script to provide a clean and reproducible setup of the RaceDay database.
+* Ensured the script creates all six tables, relationships, constraints, default values, and realistic seed data in the correct dependency order.
+* Verified that the database structure matches the ERD and can be recreated from a clean database setup.
+* Committed the final SQL database script to Git.
+
 
 ## System Description
 
