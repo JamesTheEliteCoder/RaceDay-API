@@ -50,11 +50,8 @@ own enrolments, and view their own results.
 
 ## CI/CD Pipeline
 
-The CI/CD pipeline will be implemented using GitHub Actions. A screenshot
-showing the successful pipeline execution will be added here once the workflow
-has been configured and executed successfully.
+The CI/CD pipeline is implemented using GitHub Actions to validate the required Part 1 repository structure.
 
-[CI/CD pipeline screenshot here]
 
 ## YouTube Demonstration
 
