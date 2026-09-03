@@ -33,10 +33,7 @@ Programming 2B POE
 
 ## System Description
 
-RaceDay is a full-stack event management system designed for road running,
-walking, and cycling events. The system allows organisers to manage events,
-categories, enrolments, and results, while participants can view events,
-enrol in categories, and view their results.
+RaceDay is a full-stack event management system designed for road running, walking, and cycling events. The system allows organisers to manage events, routes, categories, enrolments, and results, while participants can view events, enrol in categories, and view their results.
 
 ## User Roles
 
